@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Franco Sbaffi | Cloud Engineer</title>
+    <link rel="icon" href="assets/img/icon.png" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const nav = document.querySelector(".nav");
+        const navItems = document.querySelector(".nav-items");
+        const navHome = document.querySelector(".nav-home");
+        const navTop = document.querySelector(".nav-top");
+        const icon = document.querySelector(".hamburguer i");
+      
+        let isOpen = false;
+      
+        gsap.set(nav, { height: "60px" });
+        gsap.set(navTop, { opacity: 0, scale: 0.9, display: "none" });
+        gsap.set(navItems, { opacity: 1, display: "flex" });
+        gsap.set(navHome, { flexGrow: 0 });
+      
+        navHome.addEventListener("click", function() {
+          if (!isOpen) {
+            gsap.to(nav, {
+              height: "370px",
+              duration: 0.75,
+              ease: "power4.inOut",
+              immediateRender: false,
+            });
+      
+            gsap.to(navTop, {
+              opacity: 1,
+              scale: 1,
+              duration: 0.3,
+              onStart: function() {
+                gsap.set(navTop, { display: "block" });
+              },
+              delay: 0.5,
+              immediateRender: false,
+            });
+      
+            gsap.to(navItems, {
+              opacity: 0,
+              duration: 0.1,
+              onComplete: function() {
+                gsap.set(navItems, { display: "none" });
+              },
+              immediateRender: false,
+            });
+      
+            gsap.to(navHome, {
+              flexGrow: 1,
+              duration: 0.2,
+              ease: "power4.inOut",
+              delay: 0,
+              immediateRender: false,
+              onComplete: function() {
+                icon.className = "ph-light ph-x";
+              },
+            });
+          } else {
+            gsap.to(nav, {
+              height: "60px",
+              duration: 0.75,
+              ease: "power4.inOut",
+              delay: 0.2,
+              immediateRender: false,
+            });
+      
+            gsap.to(navTop, {
+              opacity: 0,
+              scale: 0.9,
+              duration: 0.2,
+              onComplete: function() {
+                gsap.set(navTop, { display: "none" });
+              },
+              immediateRender: false,
+            });
+      
+            gsap.to(navHome, {
+              flexGrow: 0,
+              duration: 0.2,
+              ease: "power4.inOut",
+              immediateRender: false,
+              onComplete: function() {
+                icon.className = "ph-light ph-list";
+              },
+            });
+      
+            gsap.to(navItems, {
+              opacity: 1,
+              duration: 0.2,
+              onStart: function() {
+                gsap.set(navItems, { display: "flex" });
+              },
+              delay: 0.5,
+              immediateRender: false,
+            });
+          }
+          isOpen = !isOpen;
+        });
+      });      
+    </script>   
+  </head>
+  <body>
+
+    <!-- CURSOR -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <!-- LOADING SCREEN -->
+    <div class="loader-wrap">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+      </svg>
+
+      <div class="loader-wrap-heading">
+        <span><h1>Everyone uses a <i>preloader,</i> sorry :(</h1></span>
+      </div>
+    </div>
+
+    <!-- MAIN SECTION -->
+    <div class="main-section">
+      <header>
+        <span>
+          <div class="logo">SB<b>AF</b>FI©</div>
+        </span>
+
+          <div class="info timer">
+            <div class="time">12:05:32</div>
+            <div class="time-per">am</div>
+          </div>
+        </span>
+      </header>
+    </div> 
+
+    <!-- MENU -->
+    
+    <nav class="navbar"></nav>
+    <div class="nav">
+      <div class="nav-top">
+        <div class="more-links" id="lg">
+
+          <div class="col">
+            <div class="col-title">
+              <p data-section="projects1" data-value="projectsM">Projects</p> 
+            </div> 
+            <div class="link">
+              <a href="#" data-section="projects1" data-value="firstP">EC2 Instance</a>
+            </div>
+            <div class="link">
+              <a href="#" data-section="projects1" data-value="secondP">CI/CD on Tencent Cloud</a>
+            </div>
+            <div class="link">
+              <a href="#" data-section="projects1" data-value="thirdP">Advanced Services</a>
+            </div>
+          </div> 
+
+          <div class="col">
+            <div class="col-title">
+              <p data-section="project1" data-value="contact">Contact</p> 
+            </div> 
+            <div class="link">
+              <a href="https://www.linkedin.com/in/franco-sbaffi/" target="_blank">Linkedin</a>
+            </div>
+            <div class="link">
+              <a href="mailto:sbaffids@gmail.com">Gmail</a>
+            </div>
+            <div class="link">
+              <a href="https://twitter.com/franrzsa" target="_blank">Twitter</a>
+            </div>
+          </div> 
+
+         
+        </div> 
+      </div> 
+      <div class="nav-bottom">
+        <div class="nav-home">
+          <div class="nav-item" id="toggle">
+            <div class="hamburguer">
+              <i class="ph-light ph-list"></i>
+            </div> 
+            <p>More</p>
+          </div> 
+        </div>
+        <div class="nav-items">
+          <div class="nav-item">
+            <a href="index.html">Home</a>
+          </div>
+          <div class="nav-item">
+            <a href="assets/pages/blog/blog.html">Writings</a>
+          </div>
+          <div class="nav-item">
+            <a href="assets/pages/blog/blog.html">Works</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="content_r">
+      <p class="title">
+        <b class="cloud-text"> CLOUD </b>  <b class="engineer-b"> ENGINEER </b> <b class="cloud-text"> CLOUD </b>  <b class="engineer-b"> ENGINEER </b><b class="cloud-text"> CLOUD </b>  <b class="engineer-b"> ENGINEER </b>
+      </p>
+      <img src="assets/img/icon-wb.png" alt="brand" class="brand">
+      <img src="assets/img/sbaffifranco.png" alt="picture of Franco Sbaffi" class="sbaffi-picture">
+      <div class="content-section">
+        <span class="text-2">
+          Sbaffi Franco, Buenos Aires, AR
+        </span>
+      </div>
+    </div>
+
+    <!-- SECTION TWO -->
+
+    <div class="background-white">
+      
+    </div>
+
+    <!-- SECTION THREE -->
+    
+
+    
+
+    
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
